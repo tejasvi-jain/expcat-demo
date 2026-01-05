@@ -1,15 +1,22 @@
+/* Columns Two Block - NVIDIA Style */
+
 .columns-two > div {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-}
-
-.columns-two img {
-  width: 100%;
+  gap: var(--spacing-l);
 }
 
 .columns-two > div > div {
   order: 1;
+  background-color: var(--background-color);
+  border: 1px solid #e0e0e0;
+  padding: var(--spacing-l);
+}
+
+.columns-two img {
+  width: 100%;
+  border-radius: 0;
+  margin-bottom: var(--spacing-m);
 }
 
 .columns-two > div > .columns-two-img-col {
@@ -18,24 +25,86 @@
 
 .columns-two > div > .columns-two-img-col img {
   display: block;
-  border-radius: 4px;
 }
 
 .columns-two h2,
 .columns-two h3 {
-  font-size: 1.25rem;
+  font-size: var(--heading-font-size-m);
+  font-weight: 700;
   margin-top: 0;
+  margin-bottom: var(--spacing-s);
 }
 
 .columns-two p {
-  line-height: 1.6;
+  line-height: 1.7;
+  color: var(--text-color-secondary);
+}
+
+/* Regular link styling */
+.columns-two p a:any-link {
+  color: var(--text-color);
+  text-decoration: underline;
+  text-decoration-color: var(--color-nvidia-green);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.columns-two p a:hover {
+  color: var(--color-nvidia-green);
+}
+
+/* CTA Button (link wrapped in strong) */
+.columns-two strong a {
+  display: inline-block;
+  background-color: var(--color-nvidia-green);
+  color: var(--text-color);
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: var(--spacing-xs);
+  margin-right: var(--spacing-xs);
+  border-radius: 0;
+  transition: background-color var(--transition-base), transform var(--transition-fast);
+}
+
+.columns-two strong a:hover {
+  background-color: var(--color-nvidia-green-dark);
+  color: var(--text-color);
+  transform: translateY(-1px);
+}
+
+.columns-two strong a:active {
+  transform: translateY(0);
+}
+
+/* Multiple buttons inline */
+.columns-two p strong + strong {
+  margin-left: 0;
+}
+
+/* Dark section variant */
+.section.dark .columns-two h2,
+.section.dark .columns-two h3 {
+  color: var(--text-color-white);
+}
+
+.section.dark .columns-two p {
+  color: var(--text-color-light);
+}
+
+.section.dark .columns-two a:any-link {
+  color: var(--text-color-light);
+}
+
+.section.dark .columns-two a:hover {
+  color: var(--color-nvidia-green);
 }
 
 @media (width >= 900px) {
   .columns-two > div {
     align-items: center;
     flex-direction: row;
-    gap: 48px;
+    gap: var(--spacing-xl);
   }
 
   .columns-two > div > div {
@@ -45,5 +114,10 @@
 
   .columns-two.columns-two-2-cols > div > div {
     flex: 1 1 50%;
+  }
+
+  .columns-two h2,
+  .columns-two h3 {
+    font-size: var(--heading-font-size-l);
   }
 }

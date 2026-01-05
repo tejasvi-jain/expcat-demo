@@ -1,16 +1,21 @@
+/* Columns Three Block - NVIDIA Style */
+
 .columns-three > div {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: var(--spacing-l);
 }
 
 .columns-three img {
   width: 100%;
+  border-radius: 0;
+  margin-bottom: var(--spacing-s);
 }
 
 .columns-three > div > div {
   order: 1;
-  padding: 16px;
+  padding: var(--spacing-s);
+  background-color: var(--background-color);
 }
 
 .columns-three > div > .columns-three-img-col {
@@ -23,33 +28,115 @@
 
 .columns-three h2,
 .columns-three h3 {
-  font-size: 1.25rem;
+  font-size: var(--heading-font-size-s);
+  font-weight: 700;
   margin-top: 0;
+  margin-bottom: var(--spacing-s);
+  color: var(--text-color);
 }
 
+.columns-three p {
+  line-height: 1.6;
+  color: var(--text-color-secondary);
+  font-size: var(--body-font-size-s);
+}
+
+/* List with green arrow markers */
 .columns-three ul {
-  padding-left: 1.25rem;
-  margin: 1rem 0;
+  list-style: none;
+  padding-left: 0;
+  margin: var(--spacing-s) 0;
 }
 
 .columns-three li {
-  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.25em;
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.6;
+  color: var(--text-color-secondary);
+  font-size: var(--body-font-size-s);
+}
+
+.columns-three li::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  color: var(--color-nvidia-green);
+  font-weight: 700;
+}
+
+/* CTA link with arrow */
+.columns-three a:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-color);
+  font-weight: 700;
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.columns-three a::after {
+  content: "›";
+  color: var(--color-nvidia-green);
+  font-size: 1.2em;
+  transition: transform var(--transition-base);
+}
+
+.columns-three a:hover {
+  color: var(--color-nvidia-green);
+}
+
+.columns-three a:hover::after {
+  transform: translateX(4px);
+}
+
+/* Dark section variant */
+.section.dark .columns-three > div > div {
+  background-color: transparent;
+}
+
+.section.dark .columns-three h2,
+.section.dark .columns-three h3 {
+  color: var(--text-color-white);
+}
+
+.section.dark .columns-three p,
+.section.dark .columns-three li {
+  color: var(--text-color-light);
+}
+
+.section.dark .columns-three a:any-link {
+  color: var(--text-color-light);
+}
+
+/* Grey section variant */
+.section.grey .columns-three > div > div {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--shadow-small);
 }
 
 @media (width >= 900px) {
   .columns-three > div {
     align-items: flex-start;
     flex-direction: row;
-    gap: 48px;
+    gap: var(--spacing-xl);
   }
 
   .columns-three > div > div {
     flex: 1;
     order: unset;
     padding: 0;
+    background-color: transparent;
   }
 
   .columns-three.columns-three-3-cols > div > div {
     flex: 1 1 33.333%;
+  }
+
+  .columns-three h2,
+  .columns-three h3 {
+    font-size: var(--heading-font-size-m);
   }
 }
