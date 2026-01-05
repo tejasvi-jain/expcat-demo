@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-video",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-01-05T09:30:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.nvidia.com/en-us/industries/robotics/",
+    "originPage": "NVIDIA Robotics industry page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "video-hero",
+    "imagePattern": "background-video"
+  },
+  "contentPattern": {
+    "structure": "heading + paragraph + 2 CTAs",
+    "buttonCount": 2,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "industry landing pages",
+      "product showcase pages",
+      "technology pages with video backgrounds"
+    ],
+    "notSuitableFor": [
+      "blog posts",
+      "documentation pages",
+      "simple text pages"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/en-us/industries/robotics/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-05T09:30:00.000Z"
+  }
+}

@@ -1,0 +1,49 @@
+.columns-two > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.columns-two img {
+  width: 100%;
+}
+
+.columns-two > div > div {
+  order: 1;
+}
+
+.columns-two > div > .columns-two-img-col {
+  order: 0;
+}
+
+.columns-two > div > .columns-two-img-col img {
+  display: block;
+  border-radius: 4px;
+}
+
+.columns-two h2,
+.columns-two h3 {
+  font-size: 1.25rem;
+  margin-top: 0;
+}
+
+.columns-two p {
+  line-height: 1.6;
+}
+
+@media (width >= 900px) {
+  .columns-two > div {
+    align-items: center;
+    flex-direction: row;
+    gap: 48px;
+  }
+
+  .columns-two > div > div {
+    flex: 1;
+    order: unset;
+  }
+
+  .columns-two.columns-two-2-cols > div > div {
+    flex: 1 1 50%;
+  }
+}

@@ -1,0 +1,57 @@
+.hero-video-container .hero-video-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-video {
+  position: relative;
+  padding: 40px 24px;
+  min-height: 300px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a3d0a 50%, #1a1a1a 100%);
+}
+
+.hero-video h1 {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--background-color);
+}
+
+.hero-video picture {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.hero-video img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-video p {
+  color: var(--background-color);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-video a.button {
+  background-color: #76b900;
+  border-color: #76b900;
+  color: #000;
+}
+
+.hero-video a.button:hover {
+  background-color: #5a8f00;
+  border-color: #5a8f00;
+}
+
+@media (width >= 900px) {
+  .hero-video {
+    padding: 80px 32px;
+    min-height: 500px;
+  }
+}

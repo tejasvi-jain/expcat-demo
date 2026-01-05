@@ -1,0 +1,91 @@
+{
+  "templates": [
+    {
+      "name": "nvidia-robotics-industry",
+      "urls": ["https://www.nvidia.com/en-us/industries/robotics/"],
+      "description": "NVIDIA Robotics industry landing page template with hero, use cases cards, success stories, technology columns, and CTA sections",
+      "blocks": [
+        {
+          "name": "section-hero",
+          "section": true,
+          "selector": ".nv-hero, [class*='hero-section'], section:first-of-type",
+          "sectionMetadata": {
+            "style": "dark"
+          }
+        },
+        {
+          "name": "hero-video",
+          "selector": ".nv-hero .general-container, [class*='hero'] .title",
+          "parser": "hero-video"
+        },
+        {
+          "name": "section-use-cases",
+          "section": true,
+          "selector": "#use-cases, [id*='use-cases']",
+          "sectionMetadata": {
+            "style": "grey"
+          }
+        },
+        {
+          "name": "cards-grid",
+          "selector": ".nv-usecase--cards-container, .nv-usecase--card, [class*='usecase']",
+          "parser": "cards-grid"
+        },
+        {
+          "name": "section-success-stories",
+          "section": true,
+          "selector": "#success-stories, [id*='success-stories']"
+        },
+        {
+          "name": "cards-grid",
+          "selector": ".nv-teaser--card, [class*='customer-stories'] .nv-teaser",
+          "parser": "cards-grid"
+        },
+        {
+          "name": "section-technology",
+          "section": true,
+          "selector": "#technology, [id*='technology']"
+        },
+        {
+          "name": "columns-three",
+          "selector": ".aem-Grid--3, [class*='three-col'], .nv-container .aem-Grid",
+          "parser": "columns-three"
+        },
+        {
+          "name": "section-rtx-server",
+          "section": true,
+          "selector": "[class*='rtx'], .nv-container--card-dark",
+          "sectionMetadata": {
+            "style": "dark"
+          }
+        },
+        {
+          "name": "columns-two",
+          "selector": ".nv-container .aem-Grid--2, [class*='two-col']",
+          "parser": "columns-two"
+        },
+        {
+          "name": "section-ecosystem",
+          "section": true,
+          "selector": "#ecosystem, [id*='ecosystem']"
+        },
+        {
+          "name": "section-resources",
+          "section": true,
+          "selector": "#resources, [id*='resources']",
+          "sectionMetadata": {
+            "style": "grey"
+          }
+        },
+        {
+          "name": "section-next-steps",
+          "section": true,
+          "selector": "#next-steps, [id*='next-steps']",
+          "sectionMetadata": {
+            "style": "dark"
+          }
+        }
+      ]
+    }
+  ]
+}
