@@ -1,0 +1,40 @@
+{
+  "variantName": "columns-three",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-01-05T09:30:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.nvidia.com/en-us/industries/robotics/",
+    "originPage": "NVIDIA Robotics industry page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "comfortable",
+    "purpose": "feature-columns",
+    "imagePattern": "optional"
+  },
+  "contentPattern": {
+    "structure": "3 columns with heading + list + CTA each",
+    "buttonCount": 3,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "feature breakdowns",
+      "product comparisons",
+      "technology overviews",
+      "service descriptions"
+    ],
+    "notSuitableFor": [
+      "simple 2-column layouts",
+      "image galleries",
+      "testimonials"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/en-us/industries/robotics/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-05T09:30:00.000Z"
+  }
+}
