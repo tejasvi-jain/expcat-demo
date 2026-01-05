@@ -549,6 +549,38 @@ main > .section.black > div > h2:first-child {
   color: var(--text-color-white);
 }
 
+/* Introduction Section Layout - Hero + Columns Side by Side */
+main > .section.hero-video-container.columns-two-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-l);
+}
+
+main > .section.hero-video-container.columns-two-container > .hero-video-wrapper {
+  flex: 1;
+}
+
+main > .section.hero-video-container.columns-two-container > .columns-two-wrapper {
+  flex: 1;
+}
+
+@media (width >= 900px) {
+  main > .section.hero-video-container.columns-two-container {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-xxl);
+    align-items: flex-start;
+  }
+
+  main > .section.hero-video-container.columns-two-container > .columns-two-wrapper {
+    flex: 1 1 45%;
+  }
+
+  main > .section.hero-video-container.columns-two-container > .hero-video-wrapper {
+    flex: 1 1 55%;
+  }
+}
+
 /* CTA Links with Arrow */
 a[href]::after {
   content: "";

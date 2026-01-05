@@ -8,9 +8,13 @@
 
 .columns-two > div > div {
   order: 1;
-  background-color: var(--background-color);
-  border: 1px solid #e0e0e0;
-  padding: var(--spacing-l);
+  background-color: transparent;
+  padding: var(--spacing-m) 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.columns-two > div > div:last-child {
+  border-bottom: none;
 }
 
 .columns-two img {
@@ -38,10 +42,46 @@
 .columns-two p {
   line-height: 1.7;
   color: var(--text-color-secondary);
+  margin-bottom: var(--spacing-s);
+}
+
+/* CTA Link with arrow (link wrapped in strong) */
+.columns-two strong a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: transparent;
+  color: var(--text-color);
+  padding: 0;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: var(--spacing-xs);
+  margin-right: var(--spacing-m);
+  transition: color var(--transition-base);
+}
+
+.columns-two strong a::after {
+  content: "›";
+  color: var(--color-nvidia-green);
+  font-size: 1.3em;
+  transition: transform var(--transition-base);
+}
+
+.columns-two strong a:hover {
+  color: var(--color-nvidia-green);
+}
+
+.columns-two strong a:hover::after {
+  transform: translateX(4px);
+}
+
+/* Multiple links inline */
+.columns-two p strong + strong {
+  margin-left: 0;
 }
 
 /* Regular link styling */
-.columns-two p a:any-link {
+.columns-two p a:any-link:not(strong a) {
   color: var(--text-color);
   text-decoration: underline;
   text-decoration-color: var(--color-nvidia-green);
@@ -49,37 +89,8 @@
   text-underline-offset: 3px;
 }
 
-.columns-two p a:hover {
+.columns-two p a:hover:not(strong a) {
   color: var(--color-nvidia-green);
-}
-
-/* CTA Button (link wrapped in strong) */
-.columns-two strong a {
-  display: inline-block;
-  background-color: var(--color-nvidia-green);
-  color: var(--text-color);
-  padding: 12px 24px;
-  text-decoration: none;
-  font-weight: 700;
-  margin-top: var(--spacing-xs);
-  margin-right: var(--spacing-xs);
-  border-radius: 0;
-  transition: background-color var(--transition-base), transform var(--transition-fast);
-}
-
-.columns-two strong a:hover {
-  background-color: var(--color-nvidia-green-dark);
-  color: var(--text-color);
-  transform: translateY(-1px);
-}
-
-.columns-two strong a:active {
-  transform: translateY(0);
-}
-
-/* Multiple buttons inline */
-.columns-two p strong + strong {
-  margin-left: 0;
 }
 
 /* Dark section variant */
@@ -92,32 +103,23 @@
   color: var(--text-color-light);
 }
 
-.section.dark .columns-two a:any-link {
+.section.dark .columns-two strong a {
   color: var(--text-color-light);
 }
 
-.section.dark .columns-two a:hover {
-  color: var(--color-nvidia-green);
+.section.dark .columns-two > div > div {
+  border-bottom-color: #444;
 }
 
 @media (width >= 900px) {
+  /* Keep cards stacked vertically, not side by side */
   .columns-two > div {
-    align-items: center;
-    flex-direction: row;
-    gap: var(--spacing-xl);
-  }
-
-  .columns-two > div > div {
-    flex: 1;
-    order: unset;
-  }
-
-  .columns-two.columns-two-2-cols > div > div {
-    flex: 1 1 50%;
+    flex-direction: column;
+    gap: var(--spacing-m);
   }
 
   .columns-two h2,
   .columns-two h3 {
-    font-size: var(--heading-font-size-l);
+    font-size: var(--heading-font-size-m);
   }
 }

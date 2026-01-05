@@ -20,16 +20,14 @@
   margin: 0 auto;
   width: 100%;
   padding: 0 var(--spacing-s);
-  text-align: center;
+  text-align: left;
 }
 
 .hero-video h1 {
   color: var(--text-color);
-  font-size: var(--heading-font-size-xl);
+  font-size: var(--heading-font-size-l);
   margin-bottom: var(--spacing-m);
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 0;
 }
 
 .hero-video picture {
@@ -40,10 +38,7 @@
   color: var(--text-color-secondary);
   font-size: var(--body-font-size-l);
   line-height: 1.7;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: var(--spacing-s);
+  margin-bottom: var(--spacing-m);
 }
 
 .hero-video a:any-link {
