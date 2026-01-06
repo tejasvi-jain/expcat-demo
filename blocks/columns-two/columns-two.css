@@ -103,8 +103,16 @@
   color: var(--text-color-light);
 }
 
-.section.dark .columns-two strong a {
+.section.dark .columns-two strong a,
+.section.dark .columns-two strong a:any-link {
   color: var(--text-color-light);
+  background-color: transparent;
+  padding: 0;
+  text-decoration: none;
+}
+
+.section.dark .columns-two strong a::after {
+  color: var(--color-nvidia-green);
 }
 
 .section.dark .columns-two > div > div {
