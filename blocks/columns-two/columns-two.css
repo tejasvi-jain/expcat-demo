@@ -122,4 +122,34 @@
   .columns-two h3 {
     font-size: var(--heading-font-size-m);
   }
+
+  /* Dark section with image - side by side layout (text left, image right) */
+  .section.dark .columns-two > div {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: var(--spacing-xxl);
+    align-items: center;
+  }
+
+  .section.dark .columns-two > div > div {
+    flex: 1;
+    border-bottom: none;
+    padding: 0;
+  }
+
+  .section.dark .columns-two > div > .columns-two-img-col {
+    flex: 1 1 55%;
+  }
+
+  .section.dark .columns-two > div > div:not(.columns-two-img-col) {
+    flex: 1 1 45%;
+  }
+
+  .section.dark .columns-two img {
+    margin-bottom: 0;
+  }
+
+  .section.dark .columns-two h3 {
+    font-size: var(--heading-font-size-l);
+  }
 }
