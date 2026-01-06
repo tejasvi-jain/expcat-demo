@@ -1,3 +1,5 @@
+/* Hero Video Block - NVIDIA Style */
+
 .hero-video-container .hero-video-wrapper {
   max-width: unset;
   padding: 0;
@@ -5,53 +7,90 @@
 
 .hero-video {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
-  background: linear-gradient(135deg, #1a1a1a 0%, #0a3d0a 50%, #1a1a1a 100%);
+  padding: var(--spacing-xl) var(--spacing-s);
+  min-height: auto;
+  background: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-video > div {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 var(--spacing-s);
+  text-align: left;
 }
 
 .hero-video h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+  color: var(--text-color);
+  font-size: var(--heading-font-size-l);
+  margin-bottom: var(--spacing-m);
+  margin-top: 0;
 }
 
 .hero-video picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
-}
-
-.hero-video img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+  display: none;
 }
 
 .hero-video p {
-  color: var(--background-color);
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  color: var(--text-color-secondary);
+  font-size: var(--body-font-size-l);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-m);
 }
 
-.hero-video a.button {
-  background-color: #76b900;
-  border-color: #76b900;
-  color: #000;
+.hero-video a:any-link {
+  color: var(--text-color);
+  text-decoration-color: var(--color-nvidia-green);
 }
 
-.hero-video a.button:hover {
-  background-color: #5a8f00;
-  border-color: #5a8f00;
+.hero-video a:hover {
+  color: var(--color-nvidia-green);
+}
+
+.hero-video a.button:any-link,
+.hero-video strong a {
+  display: inline-block;
+  background-color: var(--color-nvidia-green);
+  color: var(--text-color);
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: var(--body-font-size-s);
+  margin-right: var(--spacing-s);
+  margin-bottom: var(--spacing-xs);
+  border-radius: 0;
+  transition: background-color var(--transition-base), transform var(--transition-fast);
+}
+
+.hero-video a.button:hover,
+.hero-video strong a:hover {
+  background-color: var(--color-nvidia-green-dark);
+  color: var(--text-color);
+  transform: translateY(-1px);
+}
+
+.hero-video a.button:active,
+.hero-video strong a:active {
+  transform: translateY(0);
 }
 
 @media (width >= 900px) {
   .hero-video {
-    padding: 80px 32px;
-    min-height: 500px;
+    padding: var(--spacing-xxl) var(--spacing-l);
+  }
+
+  .hero-video > div {
+    padding: 0 var(--spacing-l);
+  }
+
+  .hero-video h1 {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  .hero-video p {
+    font-size: var(--body-font-size-xl);
   }
 }

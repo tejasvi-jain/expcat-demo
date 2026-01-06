@@ -1,15 +1,26 @@
+/* Columns Two Block - NVIDIA Style */
+
 .columns-two > div {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-}
-
-.columns-two img {
-  width: 100%;
+  gap: var(--spacing-l);
 }
 
 .columns-two > div > div {
   order: 1;
+  background-color: transparent;
+  padding: var(--spacing-m) 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.columns-two > div > div:last-child {
+  border-bottom: none;
+}
+
+.columns-two img {
+  width: 100%;
+  border-radius: 0;
+  margin-bottom: var(--spacing-m);
 }
 
 .columns-two > div > .columns-two-img-col {
@@ -18,32 +29,97 @@
 
 .columns-two > div > .columns-two-img-col img {
   display: block;
-  border-radius: 4px;
 }
 
 .columns-two h2,
 .columns-two h3 {
-  font-size: 1.25rem;
+  font-size: var(--heading-font-size-m);
+  font-weight: 700;
   margin-top: 0;
+  margin-bottom: var(--spacing-s);
 }
 
 .columns-two p {
-  line-height: 1.6;
+  line-height: 1.7;
+  color: var(--text-color-secondary);
+  margin-bottom: var(--spacing-s);
+}
+
+/* CTA Link with arrow (link wrapped in strong) */
+.columns-two strong a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: transparent;
+  color: var(--text-color);
+  padding: 0;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: var(--spacing-xs);
+  margin-right: var(--spacing-m);
+  transition: color var(--transition-base);
+}
+
+.columns-two strong a::after {
+  content: "›";
+  color: var(--color-nvidia-green);
+  font-size: 1.3em;
+  transition: transform var(--transition-base);
+}
+
+.columns-two strong a:hover {
+  color: var(--color-nvidia-green);
+}
+
+.columns-two strong a:hover::after {
+  transform: translateX(4px);
+}
+
+/* Multiple links inline */
+.columns-two p strong + strong {
+  margin-left: 0;
+}
+
+/* Regular link styling */
+.columns-two p a:any-link:not(strong a) {
+  color: var(--text-color);
+  text-decoration: underline;
+  text-decoration-color: var(--color-nvidia-green);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.columns-two p a:hover:not(strong a) {
+  color: var(--color-nvidia-green);
+}
+
+/* Dark section variant */
+.section.dark .columns-two h2,
+.section.dark .columns-two h3 {
+  color: var(--text-color-white);
+}
+
+.section.dark .columns-two p {
+  color: var(--text-color-light);
+}
+
+.section.dark .columns-two strong a {
+  color: var(--text-color-light);
+}
+
+.section.dark .columns-two > div > div {
+  border-bottom-color: #444;
 }
 
 @media (width >= 900px) {
+  /* Keep cards stacked vertically, not side by side */
   .columns-two > div {
-    align-items: center;
-    flex-direction: row;
-    gap: 48px;
+    flex-direction: column;
+    gap: var(--spacing-m);
   }
 
-  .columns-two > div > div {
-    flex: 1;
-    order: unset;
-  }
-
-  .columns-two.columns-two-2-cols > div > div {
-    flex: 1 1 50%;
+  .columns-two h2,
+  .columns-two h3 {
+    font-size: var(--heading-font-size-m);
   }
 }
