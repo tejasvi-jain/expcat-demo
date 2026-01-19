@@ -1,4 +1,4 @@
-/* Cards Grid Block - NVIDIA Style */
+/* Cards Grid Block - Bangkok Bank Style */
 
 .cards-grid > ul {
   list-style: none;
@@ -6,19 +6,20 @@
   padding: 0;
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--spacing-l);
+  gap: 24px;
 }
 
 .cards-grid > ul > li {
   background-color: var(--background-color);
-  border-radius: 0;
+  border-radius: 7px;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .cards-grid > ul > li:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-medium);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .cards-grid .cards-grid-card-image {
@@ -29,7 +30,7 @@
 
 .cards-grid > ul > li img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   transition: transform var(--transition-slow);
 }
@@ -39,59 +40,43 @@
 }
 
 .cards-grid .cards-grid-card-body {
-  padding: var(--spacing-m);
+  padding: 20px;
 }
 
 /* Title/Strong text styling */
 .cards-grid .cards-grid-card-body strong {
   display: block;
-  font-size: var(--heading-font-size-s);
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 500;
   color: var(--text-color);
-  margin-bottom: var(--spacing-xs);
-  line-height: 1.3;
+  margin-bottom: 12px;
+  line-height: 1.4;
 }
 
 /* Paragraph/description styling */
 .cards-grid .cards-grid-card-body p {
-  font-size: var(--body-font-size-s);
+  font-size: 14px;
   color: var(--text-color-secondary);
   line-height: 1.6;
-  margin: 0 0 var(--spacing-s);
+  margin: 0 0 16px;
 }
 
-/* Date/category text - smaller muted text */
-.cards-grid .cards-grid-card-body p:first-of-type:not(:last-of-type) {
-  font-size: var(--body-font-size-xs);
-  color: var(--text-color-muted);
-  margin-bottom: var(--spacing-xs);
-}
-
-/* CTA Link with arrow */
+/* CTA Link as button - Bangkok Bank blue */
 .cards-grid .cards-grid-card-body a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--text-color);
-  font-weight: 700;
-  font-size: var(--body-font-size-s);
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--color-primary);
+  color: var(--text-color-white);
+  font-size: 14px;
+  font-weight: 400;
   text-decoration: none;
-  transition: color var(--transition-base);
-}
-
-.cards-grid .cards-grid-card-body a::after {
-  content: "›";
-  color: var(--color-nvidia-green);
-  font-size: 1.3em;
-  transition: transform var(--transition-base);
+  border-radius: 7px;
+  transition: background-color var(--transition-base);
 }
 
 .cards-grid .cards-grid-card-body a:hover {
-  color: var(--color-nvidia-green);
-}
-
-.cards-grid .cards-grid-card-body a:hover::after {
-  transform: translateX(4px);
+  background-color: var(--color-primary-dark);
+  color: var(--text-color-white);
 }
 
 /* Customer/Product info styling */
@@ -101,28 +86,11 @@
   margin-bottom: 0;
 }
 
-/* Dark section variant */
-.section.dark .cards-grid > ul > li {
-  background-color: #2a2a2a;
-}
-
-.section.dark .cards-grid .cards-grid-card-body strong {
-  color: var(--text-color-white);
-}
-
-.section.dark .cards-grid .cards-grid-card-body p {
-  color: var(--text-color-light);
-}
-
-.section.dark .cards-grid .cards-grid-card-body a {
-  color: var(--text-color-light);
-}
-
 /* Grey section variant */
-.section.grey .cards-grid > ul > li {
+.section.grey .cards-grid > ul > li,
+.section.light .cards-grid > ul > li {
   background-color: var(--background-color);
-  box-shadow: none;
-  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 @media (width >= 600px) {
@@ -135,8 +103,10 @@
   .cards-grid > ul {
     grid-template-columns: repeat(3, 1fr);
   }
+}
 
-  .cards-grid .cards-grid-card-body {
-    padding: var(--spacing-m) var(--spacing-l);
+@media (width >= 1200px) {
+  .cards-grid > ul {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

@@ -1,36 +1,37 @@
 /*
- * NVIDIA Robotics Design System
- * Migrated from https://www.nvidia.com/en-us/industries/robotics/
+ * Bangkok Bank Design System
+ * Migrated from https://www.bangkokbank.com/en/About-Us
  */
 
 :root {
-  /* NVIDIA Brand Colors */
-  --color-nvidia-green: #76b900;
-  --color-nvidia-green-dark: #5a8f00;
-  --color-nvidia-green-light: #8ed100;
+  /* Bangkok Bank Brand Colors */
+  --color-primary: #005baa;
+  --color-primary-dark: #004a8c;
+  --color-primary-light: #0073d1;
+  --color-accent: #005baa;
 
   /* Background Colors */
   --background-color: #ffffff;
-  --background-color-dark: #1a1a1a;
-  --background-color-darker: #000000;
-  --background-color-grey: #eeeeee;
-  --background-color-light-grey: #f5f5f5;
+  --background-color-dark: #1a3a5c;
+  --background-color-darker: #0d1f33;
+  --background-color-grey: #f5f5f5;
+  --background-color-light-grey: #fafafa;
 
   /* Text Colors */
-  --text-color: #1a1a1a;
-  --text-color-secondary: #222222;
+  --text-color: #333333;
+  --text-color-secondary: #4e4e4e;
   --text-color-muted: #666666;
-  --text-color-light: #eeeeee;
+  --text-color-light: #f5f5f5;
   --text-color-white: #ffffff;
 
   /* Link Colors */
-  --link-color: #1a1a1a;
-  --link-hover-color: var(--color-nvidia-green);
-  --link-underline-color: var(--color-nvidia-green);
+  --link-color: #005baa;
+  --link-hover-color: #004a8c;
+  --link-underline-color: transparent;
 
-  /* Fonts - Using system fonts similar to NVIDIA-NALA */
-  --body-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --heading-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* Fonts - Bangkok Bank style (fallback to system fonts) */
+  --body-font-family: Tahoma, "Helvetica Neue", Arial, sans-serif;
+  --heading-font-family: Tahoma, "Helvetica Neue", Arial, sans-serif;
 
   /* Body Font Sizes */
   --body-font-size-xl: 20px;
@@ -189,7 +190,7 @@ li {
 }
 
 li::marker {
-  color: var(--color-nvidia-green);
+  color: var(--color-primary);
 }
 
 /* Code */
@@ -230,26 +231,26 @@ a:hover {
 }
 
 a:focus {
-  outline: 2px solid var(--color-nvidia-green);
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
-/* Buttons - Primary (NVIDIA Green) */
+/* Buttons - Primary (Bangkok Bank Blue) */
 a.button:any-link,
 button {
   display: inline-block;
   box-sizing: border-box;
   max-width: 100%;
   margin: var(--spacing-xs) var(--spacing-xs) var(--spacing-xs) 0;
-  padding: 12px 24px;
+  padding: 10px 20px;
   border: none;
-  border-radius: var(--border-radius-none);
-  background-color: var(--color-nvidia-green);
-  color: var(--text-color);
+  border-radius: 7px;
+  background-color: var(--color-primary);
+  color: var(--text-color-white);
   font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
-  font-weight: 700;
-  line-height: 1.25;
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
+  line-height: 1.4;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -263,7 +264,7 @@ a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--color-nvidia-green-dark);
+  background-color: var(--color-primary-dark);
   text-decoration: none;
   transform: translateY(-1px);
 }
@@ -285,33 +286,32 @@ button:disabled:hover {
 a.button.secondary,
 button.secondary {
   background-color: transparent;
-  border: 2px solid var(--color-nvidia-green);
-  color: var(--color-nvidia-green);
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
 }
 
 a.button.secondary:hover,
 a.button.secondary:focus,
 button.secondary:hover,
 button.secondary:focus {
-  background-color: var(--color-nvidia-green);
-  color: var(--text-color);
+  background-color: var(--color-primary);
+  color: var(--text-color-white);
 }
 
 /* Button - Text Link Style */
 a.button.text,
 button.text {
   background-color: transparent;
-  color: var(--text-color);
+  color: var(--color-primary);
   padding: 8px 0;
-  text-decoration: underline;
-  text-decoration-color: var(--color-nvidia-green);
-  text-decoration-thickness: 2px;
+  text-decoration: none;
 }
 
 a.button.text:hover,
 button.text:hover {
   background-color: transparent;
-  color: var(--color-nvidia-green);
+  color: var(--color-primary-dark);
+  text-decoration: underline;
 }
 
 /* Form Elements */
@@ -343,7 +343,7 @@ input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  border-color: var(--color-nvidia-green);
+  border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(118, 185, 0, 0.2);
 }
 
@@ -417,15 +417,15 @@ main > .section.dark h6 {
 
 main > .section.dark a:any-link {
   color: var(--text-color-light);
-  text-decoration-color: var(--color-nvidia-green);
+  text-decoration-color: var(--color-primary);
 }
 
 main > .section.dark a:hover {
-  color: var(--color-nvidia-green);
+  color: var(--color-primary);
 }
 
 main > .section.dark a.button:any-link {
-  background-color: var(--color-nvidia-green);
+  background-color: var(--color-primary);
   color: var(--text-color);
 }
 
@@ -505,12 +505,12 @@ main > .section.black h6 {
   text-align: center;
 }
 
-.text-nvidia-green {
-  color: var(--color-nvidia-green);
+.text-primary {
+  color: var(--color-primary);
 }
 
-.bg-nvidia-green {
-  background-color: var(--color-nvidia-green);
+.bg-primary {
+  background-color: var(--color-primary);
 }
 
 /* Screen Reader Only */
@@ -541,7 +541,7 @@ main > .section > div > h2:first-child {
   margin-bottom: 0.5em;
   padding-bottom: 0.5em;
   display: inline-block;
-  border-bottom: 3px solid var(--color-nvidia-green);
+  border-bottom: 3px solid var(--color-primary);
 }
 
 main > .section.dark > div > h2:first-child,
@@ -600,12 +600,12 @@ a.cta-link:any-link {
 .cta-link::after {
   content: "›";
   font-size: 1.2em;
-  color: var(--color-nvidia-green);
+  color: var(--color-primary);
   transition: transform var(--transition-base);
 }
 
 .cta-link:hover {
-  color: var(--color-nvidia-green);
+  color: var(--color-primary);
 }
 
 .cta-link:hover::after {
@@ -628,7 +628,7 @@ a.cta-link:any-link {
   content: ">";
   position: absolute;
   left: 0;
-  color: var(--color-nvidia-green);
+  color: var(--color-primary);
   font-weight: 700;
 }
 
@@ -655,13 +655,13 @@ a.cta-link:any-link {
 
 .tab:hover,
 [role="tab"]:hover {
-  color: var(--color-nvidia-green);
+  color: var(--color-primary);
 }
 
 .tab[aria-selected="true"],
 .tab.active,
 [role="tab"][aria-selected="true"] {
-  border-bottom-color: var(--color-nvidia-green);
+  border-bottom-color: var(--color-primary);
   color: var(--text-color);
 }
 
@@ -670,7 +670,7 @@ a.cta-link:any-link {
 .featured-badge {
   display: inline-block;
   padding: 4px 12px;
-  background-color: var(--color-nvidia-green);
+  background-color: var(--color-primary);
   color: var(--text-color);
   font-size: var(--body-font-size-xs);
   font-weight: 700;
@@ -795,9 +795,9 @@ a.cta-link:any-link {
 }
 
 .breadcrumb a:hover {
-  color: var(--color-nvidia-green);
+  color: var(--color-primary);
   text-decoration: underline;
-  text-decoration-color: var(--color-nvidia-green);
+  text-decoration-color: var(--color-primary);
 }
 
 .breadcrumb span {
@@ -835,7 +835,7 @@ a.cta-link:any-link {
 }
 
 .footer-links a:hover {
-  color: var(--color-nvidia-green);
+  color: var(--color-primary);
 }
 
 /* Social Icons */
@@ -858,7 +858,7 @@ a.cta-link:any-link {
 }
 
 .social-icons a:hover {
-  background-color: var(--color-nvidia-green);
+  background-color: var(--color-primary);
 }
 
 /* Print Styles */

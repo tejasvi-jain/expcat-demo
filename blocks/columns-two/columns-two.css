@@ -1,163 +1,137 @@
-/* Columns Two Block - NVIDIA Style */
+/* Columns Two Block - Bangkok Bank Style */
+/* Featured content sections with image and text side by side */
 
 .columns-two > div {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-l);
+  gap: 24px;
 }
 
 .columns-two > div > div {
-  order: 1;
   background-color: transparent;
-  padding: var(--spacing-m) 0;
-  border-bottom: 1px solid #e5e5e5;
 }
 
-.columns-two > div > div:last-child {
-  border-bottom: none;
+/* Featured layout with figure-like styling */
+.columns-two figure,
+.columns-two > div > div:first-child {
+  position: relative;
+  overflow: hidden;
+  border-radius: 7px;
 }
 
 .columns-two img {
   width: 100%;
-  border-radius: 0;
-  margin-bottom: var(--spacing-m);
-}
-
-.columns-two > div > .columns-two-img-col {
-  order: 0;
-}
-
-.columns-two > div > .columns-two-img-col img {
+  border-radius: 7px;
   display: block;
 }
 
 .columns-two h2,
 .columns-two h3 {
-  font-size: var(--heading-font-size-m);
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 500;
   margin-top: 0;
-  margin-bottom: var(--spacing-s);
+  margin-bottom: 12px;
+  color: var(--text-color);
 }
 
 .columns-two p {
-  line-height: 1.7;
+  line-height: 1.6;
+  font-size: 14px;
   color: var(--text-color-secondary);
-  margin-bottom: var(--spacing-s);
+  margin-bottom: 16px;
 }
 
-/* CTA Link with arrow (link wrapped in strong) */
-.columns-two strong a {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  background-color: transparent;
-  color: var(--text-color);
-  padding: 0;
+/* CTA Button - Bangkok Bank blue */
+.columns-two a.button,
+.columns-two strong a,
+.columns-two p a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--color-primary);
+  color: var(--text-color-white);
+  font-size: 14px;
+  font-weight: 400;
   text-decoration: none;
-  font-weight: 700;
-  margin-top: var(--spacing-xs);
-  margin-right: var(--spacing-m);
-  transition: color var(--transition-base);
+  border-radius: 7px;
+  transition: background-color var(--transition-base);
 }
 
-.columns-two strong a::after {
-  content: "›";
-  color: var(--color-nvidia-green);
-  font-size: 1.3em;
-  transition: transform var(--transition-base);
-}
-
-.columns-two strong a:hover {
-  color: var(--color-nvidia-green);
-}
-
-.columns-two strong a:hover::after {
-  transform: translateX(4px);
-}
-
-/* Multiple links inline */
-.columns-two p strong + strong {
-  margin-left: 0;
-}
-
-/* Regular link styling */
-.columns-two p a:any-link:not(strong a) {
-  color: var(--text-color);
-  text-decoration: underline;
-  text-decoration-color: var(--color-nvidia-green);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
-}
-
-.columns-two p a:hover:not(strong a) {
-  color: var(--color-nvidia-green);
-}
-
-/* Dark section variant */
-.section.dark .columns-two h2,
-.section.dark .columns-two h3 {
+.columns-two a.button:hover,
+.columns-two strong a:hover,
+.columns-two p a:hover {
+  background-color: var(--color-primary-dark);
   color: var(--text-color-white);
 }
 
-.section.dark .columns-two p {
-  color: var(--text-color-light);
+/* Icon links layout (Contact Us, Locate Us style) */
+.columns-two-container .columns-two > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
 }
 
-.section.dark .columns-two strong a,
-.section.dark .columns-two strong a:any-link {
-  color: var(--text-color-light);
-  background-color: transparent;
-  padding: 0;
+.columns-two-container .columns-two > div > div {
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.columns-two-container .columns-two img {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 12px;
+  border-radius: 0;
+}
+
+.columns-two-container .columns-two a {
+  color: var(--color-primary);
   text-decoration: none;
+  font-weight: 500;
+  background: none;
+  padding: 0;
 }
 
-.section.dark .columns-two strong a::after {
-  color: var(--color-nvidia-green);
-}
-
-.section.dark .columns-two > div > div {
-  border-bottom-color: #444;
+.columns-two-container .columns-two a:hover {
+  color: var(--color-primary-dark);
+  background: none;
+  text-decoration: underline;
 }
 
 @media (width >= 900px) {
-  /* Keep cards stacked vertically, not side by side */
   .columns-two > div {
-    flex-direction: column;
-    gap: var(--spacing-m);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    align-items: center;
   }
 
   .columns-two h2,
   .columns-two h3 {
-    font-size: var(--heading-font-size-m);
+    font-size: 24px;
   }
 
-  /* Dark section with image - side by side layout (text left, image right) */
-  .section.dark .columns-two > div {
-    display: flex;
-    flex-direction: row-reverse;
-    gap: var(--spacing-xxl);
-    align-items: center;
+  .columns-two p {
+    font-size: 16px;
   }
 
-  .section.dark .columns-two > div > div {
-    flex: 1;
-    border-bottom: none;
-    padding: 0;
+  /* Featured content with image overlay text */
+  .columns-two figure {
+    position: relative;
   }
 
-  .section.dark .columns-two > div > .columns-two-img-col {
-    flex: 1 1 55%;
+  .columns-two figure img {
+    border-radius: 7px;
   }
 
-  .section.dark .columns-two > div > div:not(.columns-two-img-col) {
-    flex: 1 1 45%;
-  }
-
-  .section.dark .columns-two img {
-    margin-bottom: 0;
-  }
-
-  .section.dark .columns-two h3 {
-    font-size: var(--heading-font-size-l);
+  .columns-two figcaption,
+  .columns-two .intro-info {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--background-color);
+    padding: 24px;
+    max-width: 50%;
+    border-radius: 7px 0 7px 0;
   }
 }
