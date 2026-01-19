@@ -1,0 +1,41 @@
+{
+  "variantName": "hero-banner",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-01-19T09:50:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.bangkokbank.com/en/About-Us",
+    "originPage": "Bangkok Bank About Us page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "flexible",
+    "density": "comfortable",
+    "purpose": "page-banner",
+    "imagePattern": "background-image"
+  },
+  "contentPattern": {
+    "structure": "heading + paragraph + optional CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "page hero sections",
+      "section banners with background images",
+      "call-to-action sections",
+      "about pages",
+      "corporate pages"
+    ],
+    "notSuitableFor": [
+      "video background heroes",
+      "simple text-only sections",
+      "product detail pages"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/en/about-us"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-19T09:50:00.000Z"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "variantName": "cards-dark",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-01-19T09:50:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.bangkokbank.com/en/About-Us",
+    "originPage": "Bangkok Bank About Us page - Careers section",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "comfortable",
+    "purpose": "career-cards",
+    "imagePattern": "background-image"
+  },
+  "contentPattern": {
+    "structure": "image + heading + description",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "dark section card grids",
+      "career opportunity cards",
+      "feature cards on dark backgrounds",
+      "benefit showcases"
+    ],
+    "notSuitableFor": [
+      "light background sections",
+      "news or article listings",
+      "product cards with CTAs"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/en/about-us"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-19T09:50:00.000Z"
+  }
+}
