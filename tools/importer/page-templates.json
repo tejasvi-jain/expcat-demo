@@ -1,6 +1,46 @@
 {
   "templates": [
     {
+      "name": "bangkok-bank-about-us",
+      "urls": ["https://www.bangkokbank.com/en/About-Us"],
+      "description": "Corporate about page with hero banner, card grids, programs, careers section, and news",
+      "blocks": [
+        {
+          "name": "hero-banner",
+          "instances": [
+            "section.banner",
+            ".thumb-full.large[style*='background-image']"
+          ]
+        },
+        {
+          "name": "cards-grid",
+          "instances": [
+            ".row.row-center > [class*='col-md'] > .thumb-default:not(:has(.promotion-valid))"
+          ]
+        },
+        {
+          "name": "cards-dark",
+          "instances": [
+            ".thumb-full .row-left .thumb-square-caption"
+          ],
+          "section": "dark"
+        },
+        {
+          "name": "cards-news",
+          "instances": [
+            ".stories .thumb-default:has(.promotion-valid)"
+          ]
+        },
+        {
+          "name": "columns-two",
+          "instances": [
+            "figure.thumb-large",
+            ".list-thumb-square"
+          ]
+        }
+      ]
+    },
+    {
       "name": "nvidia-robotics-industry",
       "urls": ["https://www.nvidia.com/en-us/industries/robotics/"],
       "description": "NVIDIA Robotics industry landing page template with hero, use cases cards, success stories, technology columns, and CTA sections",
