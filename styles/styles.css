@@ -618,18 +618,40 @@ a.cta-link:any-link {
   padding-left: 0;
 }
 
-.section ul:not([class]) li {
+/* Default content lists - exclude block wrappers */
+.section > div:not([class*="-wrapper"]) > ul:not([class]) li,
+.section > ul:not([class]) li,
+main > div > ul:not([class]) li {
   position: relative;
   padding-left: 1.5em;
   margin-bottom: 0.75em;
 }
 
-.section ul:not([class]) li::before {
+.section > div:not([class*="-wrapper"]) > ul:not([class]) li::before,
+.section > ul:not([class]) li::before,
+main > div > ul:not([class]) li::before {
   content: ">";
   position: absolute;
   left: 0;
   color: var(--color-primary);
   font-weight: 700;
+}
+
+/* Exclude lists inside blocks from default styling */
+.cards-grid ul li,
+.cards-news ul li,
+.cards-dark ul li,
+[class*="-wrapper"] ul li {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.cards-grid ul li::before,
+.cards-news ul li::before,
+.cards-dark ul li::before,
+[class*="-wrapper"] ul li::before {
+  content: none;
+  display: none;
 }
 
 /* Tab Styling */

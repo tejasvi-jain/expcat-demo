@@ -1,56 +1,60 @@
 /* Cards Grid Block - Bangkok Bank Style */
+/* Clean card layout with no backgrounds, matching original site */
 
 .cards-grid > ul {
   list-style: none;
+  list-style-type: none;
   margin: 0;
   padding: 0;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 32px;
 }
 
 .cards-grid > ul > li {
-  background-color: var(--background-color);
-  border-radius: 7px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  background-color: transparent;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
+  list-style: none;
+  list-style-type: none;
 }
 
-.cards-grid > ul > li:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+.cards-grid > ul > li::before,
+.cards-grid > ul > li::marker {
+  content: none;
+  display: none;
 }
 
 .cards-grid .cards-grid-card-image {
   line-height: 0;
   overflow: hidden;
   position: relative;
+  margin-bottom: 16px;
 }
 
 .cards-grid > ul > li img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  transition: transform var(--transition-slow);
-}
-
-.cards-grid > ul > li:hover img {
-  transform: scale(1.03);
+  border-radius: 0;
 }
 
 .cards-grid .cards-grid-card-body {
-  padding: 20px;
+  padding: 0;
 }
 
 /* Title/Strong text styling */
-.cards-grid .cards-grid-card-body strong {
+.cards-grid .cards-grid-card-body strong,
+.cards-grid .cards-grid-card-body p:first-child strong {
   display: block;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-color);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   line-height: 1.4;
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--color-primary);
 }
 
 /* Paragraph/description styling */
@@ -61,36 +65,53 @@
   margin: 0 0 16px;
 }
 
-/* CTA Link as button - Bangkok Bank blue */
-.cards-grid .cards-grid-card-body a {
-  display: inline-block;
-  padding: 10px 20px;
+/* First paragraph with strong - no margin */
+.cards-grid .cards-grid-card-body p:first-child {
+  margin-bottom: 0;
+}
+
+/* Description paragraph */
+.cards-grid .cards-grid-card-body p:nth-child(2) {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+/* CTA Link as full-width button - Bangkok Bank blue */
+.cards-grid .cards-grid-card-body p:last-child a {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
   background-color: var(--color-primary);
   color: var(--text-color-white);
   font-size: 14px;
   font-weight: 400;
   text-decoration: none;
+  text-align: center;
   border-radius: 7px;
   transition: background-color var(--transition-base);
+  box-sizing: border-box;
 }
 
-.cards-grid .cards-grid-card-body a:hover {
+.cards-grid .cards-grid-card-body p:last-child a:hover {
   background-color: var(--color-primary-dark);
   color: var(--text-color-white);
 }
 
-/* Customer/Product info styling */
+/* Inline strong styling */
 .cards-grid .cards-grid-card-body p strong {
   display: inline;
   font-size: inherit;
   margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
-/* Grey section variant */
-.section.grey .cards-grid > ul > li,
-.section.light .cards-grid > ul > li {
-  background-color: var(--background-color);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+/* First child strong override */
+.cards-grid .cards-grid-card-body p:first-child strong {
+  display: block;
+  font-size: 18px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--color-primary);
 }
 
 @media (width >= 600px) {
@@ -102,6 +123,12 @@
 @media (width >= 900px) {
   .cards-grid > ul {
     grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .cards-grid .cards-grid-card-body strong,
+  .cards-grid .cards-grid-card-body p:first-child strong {
+    font-size: 20px;
   }
 }
 
