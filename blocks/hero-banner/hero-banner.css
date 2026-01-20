@@ -122,3 +122,180 @@
     font-size: 16px;
   }
 }
+
+/* ===== TOOLS & ASSISTANCE Style - Hero + Icon Links Combined ===== */
+/* When hero-banner and columns-two are in the same section */
+.section.hero-banner-container.columns-two-container {
+  position: relative;
+  padding: 0;
+}
+
+.section.hero-banner-container.columns-two-container .hero-banner-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.section.hero-banner-container.columns-two-container .hero-banner {
+  min-height: 400px;
+  padding: 60px 24px 180px;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.section.hero-banner-container.columns-two-container .hero-banner > div {
+  max-width: var(--max-width, 1200px);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--spacing-s, 16px);
+}
+
+/* Small label styling (TOOLS & ASSISTANCE) */
+.section.hero-banner-container.columns-two-container .hero-banner p:first-of-type {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.section.hero-banner-container.columns-two-container .hero-banner p:first-of-type::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--color-primary, #0064ff);
+}
+
+/* Main heading */
+.section.hero-banner-container.columns-two-container .hero-banner h1 {
+  font-size: 32px;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Columns-two wrapper - positioned to overlay the banner at bottom-left */
+.section.hero-banner-container.columns-two-container .columns-two-wrapper {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 0;
+}
+
+.section.hero-banner-container.columns-two-container .columns-two-wrapper .columns-two {
+  max-width: var(--max-width, 1200px);
+  margin: 0 auto;
+  padding: 0 var(--spacing-s, 16px);
+}
+
+/* Icon cards layout */
+.section.hero-banner-container.columns-two-container .columns-two > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Each icon card */
+.section.hero-banner-container.columns-two-container .columns-two > div > div {
+  background-color: #fff !important;
+  padding: 24px 32px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+  text-align: center;
+  min-width: 140px;
+  position: static !important;
+  transform: none !important;
+  width: auto !important;
+  max-width: none !important;
+}
+
+/* Icon image */
+.section.hero-banner-container.columns-two-container .columns-two img {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px;
+  display: block;
+  border-radius: 0;
+  object-fit: contain;
+}
+
+/* Link text styling */
+.section.hero-banner-container.columns-two-container .columns-two p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.section.hero-banner-container.columns-two-container .columns-two p.button-container {
+  margin: 0;
+}
+
+.section.hero-banner-container.columns-two-container .columns-two a,
+.section.hero-banner-container.columns-two-container .columns-two a.button {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: var(--text-color, #000);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.section.hero-banner-container.columns-two-container .columns-two a:hover,
+.section.hero-banner-container.columns-two-container .columns-two a.button:hover {
+  color: var(--color-primary, #0064ff);
+  background: transparent;
+  transform: none;
+}
+
+/* Desktop adjustments */
+@media (width >= 900px) {
+  .section.hero-banner-container.columns-two-container .hero-banner {
+    min-height: 450px;
+    padding: 80px 48px 200px;
+  }
+
+  .section.hero-banner-container.columns-two-container .hero-banner > div {
+    padding: 0 var(--spacing-l, 32px);
+  }
+
+  .section.hero-banner-container.columns-two-container .hero-banner h1 {
+    font-size: 44px;
+  }
+
+  .section.hero-banner-container.columns-two-container .columns-two-wrapper {
+    bottom: 60px;
+    padding: 0 var(--spacing-l, 32px);
+  }
+
+  .section.hero-banner-container.columns-two-container .columns-two > div > div {
+    padding: 28px 40px;
+  }
+
+  .section.hero-banner-container.columns-two-container .columns-two img {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+@media (width >= 1200px) {
+  .section.hero-banner-container.columns-two-container .hero-banner {
+    min-height: 500px;
+  }
+
+  .section.hero-banner-container.columns-two-container .hero-banner h1 {
+    font-size: 48px;
+  }
+}
