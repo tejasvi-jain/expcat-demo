@@ -1,6 +1,31 @@
-/* Cards Grid Block - Bangkok Bank Style */
-/* Clean card layout with no backgrounds, matching original site */
+/* Cards Grid Block - Bangkok Bank Style
+ * Thumbnail cards with title overlay and hover effects
+ * 3-column desktop, 1-column mobile
+ */
 
+/* ===== Style Tokens =====
+ * --color-primary: #0064ff
+ * --text-color-white: #ffffff
+ * --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15)
+ * --border-radius-medium: 8px
+ * --transition-base: 0.2s ease
+ * --transition-slow: 0.3s ease
+ */
+
+/* Container */
+.cards-grid-container .cards-grid-wrapper {
+  max-width: var(--max-width, 1200px);
+  margin: 0 auto;
+  padding: 0 var(--spacing-s, 16px);
+}
+
+@media (width >= 900px) {
+  .cards-grid-container .cards-grid-wrapper {
+    padding: 0 var(--spacing-l, 32px);
+  }
+}
+
+/* Grid Layout */
 .cards-grid > ul {
   list-style: none;
   list-style-type: none;
@@ -8,144 +33,298 @@
   padding: 0;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
+  gap: 24px;
 }
 
+/* Card Item */
 .cards-grid > ul > li {
-  background-color: transparent;
-  border-radius: 0;
-  overflow: visible;
-  box-shadow: none;
+  position: relative;
+  background-color: var(--background-color, #fff);
+  border-radius: var(--border-radius-medium, 8px);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   list-style: none;
   list-style-type: none;
+  transition: transform var(--transition-slow, 0.3s ease),
+              box-shadow var(--transition-slow, 0.3s ease);
+  cursor: pointer;
+
+  /* Scroll animation - initial state */
+  opacity: 0;
+  transform: translateY(30px);
 }
 
+/* Animated state when visible */
+.cards-grid > ul > li.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform var(--transition-slow, 0.3s ease),
+              box-shadow var(--transition-slow, 0.3s ease),
+              opacity 0.6s ease-out;
+}
+
+/* Staggered animation delays */
+.cards-grid > ul > li:nth-child(1) { transition-delay: 0s; }
+.cards-grid > ul > li:nth-child(2) { transition-delay: 0.1s; }
+.cards-grid > ul > li:nth-child(3) { transition-delay: 0.2s; }
+.cards-grid > ul > li:nth-child(4) { transition-delay: 0.1s; }
+.cards-grid > ul > li:nth-child(5) { transition-delay: 0.2s; }
+.cards-grid > ul > li:nth-child(6) { transition-delay: 0.3s; }
+.cards-grid > ul > li:nth-child(7) { transition-delay: 0.2s; }
+
+/* Remove list markers */
 .cards-grid > ul > li::before,
 .cards-grid > ul > li::marker {
   content: none;
   display: none;
 }
 
+/* Hover state */
+.cards-grid > ul > li:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Container - Full card clickable area */
 .cards-grid .cards-grid-card-image {
+  position: relative;
   line-height: 0;
   overflow: hidden;
-  position: relative;
-  margin-bottom: 16px;
 }
 
+/* Image styling */
 .cards-grid > ul > li img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
-  border-radius: 0;
+  transition: transform var(--transition-slow, 0.3s ease);
 }
 
+/* Image zoom on hover */
+.cards-grid > ul > li:hover img {
+  transform: scale(1.05);
+}
+
+/* Gradient overlay on image */
+.cards-grid .cards-grid-card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.3) 40%,
+    rgba(0, 0, 0, 0.1) 70%,
+    transparent 100%
+  );
+  transition: background var(--transition-base, 0.2s ease);
+}
+
+/* Darker overlay on hover */
+.cards-grid > ul > li:hover .cards-grid-card-image::after {
+  background: linear-gradient(
+    to top,
+    rgba(0, 100, 255, 0.8) 0%,
+    rgba(0, 50, 150, 0.5) 40%,
+    rgba(0, 0, 0, 0.2) 70%,
+    transparent 100%
+  );
+}
+
+/* Card Body - Title Overlay */
 .cards-grid .cards-grid-card-body {
-  padding: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  z-index: 2;
 }
 
-/* Title/Strong text styling - Bangkok Bank exact values */
+/* Title styling */
 .cards-grid .cards-grid-card-body strong,
 .cards-grid .cards-grid-card-body p:first-child strong {
   display: block;
-  font-size: 21px;
-  font-weight: 400;
-  color: var(--text-color);
-  margin-bottom: 15px;
-  line-height: 1.08;
-  padding-bottom: 15px;
-  position: relative;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-color-white, #fff);
+  line-height: 1.25;
+  margin: 0;
+  padding: 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: transform var(--transition-base, 0.2s ease);
 }
 
-/* Short grey line below title */
+/* Title lift on hover */
+.cards-grid > ul > li:hover .cards-grid-card-body strong,
+.cards-grid > ul > li:hover .cards-grid-card-body p:first-child strong {
+  transform: translateY(-4px);
+}
+
+/* Remove underline decoration from original */
 .cards-grid .cards-grid-card-body p:first-child strong::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 30px;
-  height: 2px;
-  background-color: #999;
+  display: none;
 }
 
-/* Paragraph/description styling - Bangkok Bank exact values */
-.cards-grid .cards-grid-card-body p {
-  font-size: 14px;
-  color: var(--text-color-muted);
-  line-height: 1.28;
-  margin: 0 0 16px;
+/* Hide description and CTA by default - show on hover */
+.cards-grid .cards-grid-card-body p:not(:first-child) {
+  display: none;
 }
 
-/* First paragraph with strong - no margin */
+/* First paragraph containing title */
 .cards-grid .cards-grid-card-body p:first-child {
-  margin-bottom: 0;
+  margin: 0;
 }
 
-/* Description paragraph */
-.cards-grid .cards-grid-card-body p:nth-child(2) {
-  margin-top: 16px;
-  margin-bottom: 20px;
-}
-
-/* CTA Link as button - Bangkok Bank blue, exact styling */
-.cards-grid .cards-grid-card-body p:last-child a {
-  display: inline-block;
-  width: 186px;
-  padding: 12px 20px;
-  background-color: var(--color-primary);
-  color: var(--text-color-white);
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.8px;
-  text-decoration: none;
-  text-align: center;
-  border-radius: 7px;
-  transition: background-color var(--transition-base);
-  box-sizing: border-box;
-}
-
-.cards-grid .cards-grid-card-body p:last-child a:hover {
-  background-color: var(--color-primary-dark);
-  color: var(--text-color-white);
-}
-
-/* Inline strong styling */
-.cards-grid .cards-grid-card-body p strong {
-  display: inline;
-  font-size: inherit;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: none;
-}
-
-/* First child strong override */
-.cards-grid .cards-grid-card-body p:first-child strong {
-  display: block;
+/* Arrow indicator */
+.cards-grid .cards-grid-card-body::after {
+  content: '→';
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
   font-size: 20px;
-  font-weight: 400;
-  padding-bottom: 15px;
+  color: var(--text-color-white, #fff);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity var(--transition-base, 0.2s ease),
+              transform var(--transition-base, 0.2s ease);
 }
 
+.cards-grid > ul > li:hover .cards-grid-card-body::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Make entire card clickable via the link */
+.cards-grid > ul > li a {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+/* Keep the visible title text */
+.cards-grid .cards-grid-card-body p:first-child {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Tablet (600px+) ===== */
 @media (width >= 600px) {
   .cards-grid > ul {
     grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .cards-grid .cards-grid-card-body strong,
+  .cards-grid .cards-grid-card-body p:first-child strong {
+    font-size: 20px;
   }
 }
 
+/* ===== Desktop (900px+) - 3 columns ===== */
 @media (width >= 900px) {
   .cards-grid > ul {
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 32px;
+  }
+
+  .cards-grid > ul > li img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .cards-grid .cards-grid-card-body {
+    padding: 24px;
+  }
+
+  .cards-grid .cards-grid-card-body strong,
+  .cards-grid .cards-grid-card-body p:first-child strong {
+    font-size: 22px;
+  }
+}
+
+/* ===== Large Desktop (1200px+) ===== */
+@media (width >= 1200px) {
+  .cards-grid > ul {
+    gap: 36px;
   }
 
   .cards-grid .cards-grid-card-body strong,
   .cards-grid .cards-grid-card-body p:first-child strong {
     font-size: 24px;
   }
+
+  .cards-grid .cards-grid-card-body {
+    padding: 28px;
+  }
+
+  .cards-grid .cards-grid-card-body::after {
+    font-size: 24px;
+  }
 }
 
-@media (width >= 1200px) {
+/* ===== Accessibility: Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  .cards-grid > ul > li {
+    opacity: 1;
+    transform: none;
+    transition: box-shadow var(--transition-base, 0.2s ease);
+  }
+
+  .cards-grid > ul > li.animate-in {
+    transition: box-shadow var(--transition-base, 0.2s ease);
+  }
+
+  .cards-grid > ul > li:hover {
+    transform: none;
+  }
+
+  .cards-grid > ul > li:hover img {
+    transform: none;
+  }
+}
+
+/* ===== Focus States for Accessibility ===== */
+.cards-grid > ul > li:focus-within {
+  outline: 3px solid var(--color-primary, #0064ff);
+  outline-offset: 2px;
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.cards-grid > ul > li a:focus {
+  outline: none;
+}
+
+/* ===== Print Styles ===== */
+@media print {
   .cards-grid > ul {
-    grid-template-columns: repeat(4, 1fr);
+    display: block;
+  }
+
+  .cards-grid > ul > li {
+    opacity: 1;
+    transform: none;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    margin-bottom: 16px;
+    page-break-inside: avoid;
+  }
+
+  .cards-grid .cards-grid-card-image::after {
+    display: none;
+  }
+
+  .cards-grid .cards-grid-card-body {
+    position: static;
+    padding: 16px;
+    background: #fff;
+  }
+
+  .cards-grid .cards-grid-card-body strong,
+  .cards-grid .cards-grid-card-body p:first-child strong {
+    color: #000;
+    text-shadow: none;
   }
 }
