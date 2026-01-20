@@ -1,0 +1,40 @@
+{
+  "variantName": "cards-news",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-01-19T09:50:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.bangkokbank.com/en/About-Us",
+    "originPage": "Bangkok Bank About Us page - Bank News section",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "comfortable",
+    "purpose": "news-cards",
+    "imagePattern": "top-image"
+  },
+  "contentPattern": {
+    "structure": "image + description + date + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "news article listings",
+      "blog post previews",
+      "press release sections",
+      "event announcements"
+    ],
+    "notSuitableFor": [
+      "feature showcases without dates",
+      "product cards",
+      "team member profiles"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/en/about-us"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-19T09:50:00.000Z"
+  }
+}
