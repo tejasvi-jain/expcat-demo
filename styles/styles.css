@@ -4,11 +4,11 @@
  */
 
 :root {
-  /* Bangkok Bank Brand Colors */
-  --color-primary: #005baa;
-  --color-primary-dark: #004a8c;
-  --color-primary-light: #0073d1;
-  --color-accent: #005baa;
+  /* Bangkok Bank Brand Colors - Extracted from live site */
+  --color-primary: #0064ff;
+  --color-primary-dark: #0050cc;
+  --color-primary-light: #3385ff;
+  --color-accent: #0064ff;
 
   /* Background Colors */
   --background-color: #ffffff;
@@ -17,19 +17,19 @@
   --background-color-grey: #f5f5f5;
   --background-color-light-grey: #fafafa;
 
-  /* Text Colors */
-  --text-color: #333333;
+  /* Text Colors - Extracted from Bangkok Bank */
+  --text-color: #000000;
   --text-color-secondary: #4e4e4e;
-  --text-color-muted: #666666;
+  --text-color-muted: #78787d;
   --text-color-light: #f5f5f5;
   --text-color-white: #ffffff;
 
   /* Link Colors */
-  --link-color: #005baa;
-  --link-hover-color: #004a8c;
+  --link-color: #0064ff;
+  --link-hover-color: #0050cc;
   --link-underline-color: transparent;
 
-  /* Fonts - Bangkok Bank style (fallback to system fonts) */
+  /* Fonts - Bangkok Bank uses proprietary font, Tahoma as fallback */
   --body-font-family: Tahoma, "Helvetica Neue", Arial, sans-serif;
   --heading-font-family: Tahoma, "Helvetica Neue", Arial, sans-serif;
 

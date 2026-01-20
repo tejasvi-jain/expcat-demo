@@ -3,19 +3,28 @@
 
 .cards-dark > ul {
   list-style: none;
+  list-style-type: none;
   margin: 0;
   padding: 0;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 20px;
 }
 
 .cards-dark > ul > li {
   position: relative;
   border-radius: 7px;
   overflow: hidden;
-  min-height: 200px;
+  min-height: 180px;
   background-color: var(--background-color-dark);
+  list-style: none;
+  list-style-type: none;
+}
+
+.cards-dark > ul > li::before,
+.cards-dark > ul > li::marker {
+  content: none;
+  display: none;
 }
 
 /* Background image container */
@@ -30,7 +39,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.1) 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%);
 }
 
 .cards-dark > ul > li img {
@@ -43,28 +52,32 @@
 .cards-dark .cards-dark-card-body {
   position: relative;
   z-index: 1;
-  padding: 24px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height: 200px;
+  min-height: 180px;
 }
 
 .cards-dark .cards-dark-card-body strong,
 .cards-dark .cards-dark-card-body p:first-child strong {
   display: block;
   color: var(--text-color-white);
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
   margin-bottom: 8px;
   line-height: 1.3;
 }
 
 .cards-dark .cards-dark-card-body p {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
   line-height: 1.5;
   margin: 0;
+}
+
+.cards-dark .cards-dark-card-body p:first-child {
+  margin-bottom: 0;
 }
 
 @media (width >= 600px) {
@@ -76,13 +89,24 @@
 @media (width >= 900px) {
   .cards-dark > ul {
     grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
   }
 
   .cards-dark > ul > li {
-    min-height: 220px;
+    min-height: 200px;
   }
 
   .cards-dark .cards-dark-card-body {
-    min-height: 220px;
+    min-height: 200px;
+    padding: 24px;
+  }
+
+  .cards-dark .cards-dark-card-body strong,
+  .cards-dark .cards-dark-card-body p:first-child strong {
+    font-size: 18px;
+  }
+
+  .cards-dark .cards-dark-card-body p {
+    font-size: 14px;
   }
 }

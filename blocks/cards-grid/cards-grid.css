@@ -44,24 +44,35 @@
   padding: 0;
 }
 
-/* Title/Strong text styling */
+/* Title/Strong text styling - Bangkok Bank exact values */
 .cards-grid .cards-grid-card-body strong,
 .cards-grid .cards-grid-card-body p:first-child strong {
   display: block;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 21px;
+  font-weight: 400;
   color: var(--text-color);
-  margin-bottom: 16px;
-  line-height: 1.4;
-  padding-bottom: 12px;
-  border-bottom: 3px solid var(--color-primary);
+  margin-bottom: 15px;
+  line-height: 1.08;
+  padding-bottom: 15px;
+  position: relative;
 }
 
-/* Paragraph/description styling */
+/* Short grey line below title */
+.cards-grid .cards-grid-card-body p:first-child strong::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #999;
+}
+
+/* Paragraph/description styling - Bangkok Bank exact values */
 .cards-grid .cards-grid-card-body p {
   font-size: 14px;
-  color: var(--text-color-secondary);
-  line-height: 1.6;
+  color: var(--text-color-muted);
+  line-height: 1.28;
   margin: 0 0 16px;
 }
 
@@ -76,15 +87,16 @@
   margin-bottom: 20px;
 }
 
-/* CTA Link as full-width button - Bangkok Bank blue */
+/* CTA Link as button - Bangkok Bank blue, exact styling */
 .cards-grid .cards-grid-card-body p:last-child a {
-  display: block;
-  width: 100%;
+  display: inline-block;
+  width: 186px;
   padding: 12px 20px;
   background-color: var(--color-primary);
   color: var(--text-color-white);
   font-size: 14px;
   font-weight: 400;
+  letter-spacing: 0.8px;
   text-decoration: none;
   text-align: center;
   border-radius: 7px;
@@ -109,9 +121,9 @@
 /* First child strong override */
 .cards-grid .cards-grid-card-body p:first-child strong {
   display: block;
-  font-size: 18px;
-  padding-bottom: 12px;
-  border-bottom: 3px solid var(--color-primary);
+  font-size: 20px;
+  font-weight: 400;
+  padding-bottom: 15px;
 }
 
 @media (width >= 600px) {
@@ -128,7 +140,7 @@
 
   .cards-grid .cards-grid-card-body strong,
   .cards-grid .cards-grid-card-body p:first-child strong {
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 
